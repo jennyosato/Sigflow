@@ -41,7 +41,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-white">
       <div>
         <img src={logo} alt="logo" className="shrink-0 ml-[30px] mt-[30px]" />
       </div>
@@ -79,7 +79,7 @@ const Login = () => {
                 required
                 id="email"
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-[344px] md:w-[420px] h-[38px] rounded-lg bg-white px-3 border border-[#D0D5DD] focus:outline-none"
+                className="w-[344px] text-[#101828] text-sm md:w-[420px] h-[38px] rounded-lg bg-white px-3 border border-[#D0D5DD] focus:outline-none"
               />
             </div>
             <div className="flex flex-col items-start relative">
@@ -94,7 +94,7 @@ const Login = () => {
                 required
                 id="password"
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-[340px] md:w-[420px] h-[38px] rounded-lg bg-white px-3 border border-[#D0D5DD] focus:outline-none"
+                className="w-[340px] text-[#101828] text-sm md:w-[420px] h-[38px] rounded-lg bg-white px-3 border border-[#D0D5DD] focus:outline-none"
               />
               <a
                 className="text-xs text-[#32D583] leading-5 font-medium"

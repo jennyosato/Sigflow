@@ -1,32 +1,12 @@
 import React, { useState } from "react";
-import Layout from "./layout";
 import Navbar from "./Navbar";
-import dots from "../assets/dots.svg";
 import logo from "../assets/logo.svg";
 import Options from "./options";
 
 
 const Home = () => {
-  // const nav = menu.map((i) => {
-  //     return (
-  //       <li
-  //       key={i.title}
-  //         className={`flex items-center px-1 gap-3 ${
-  //           i.margint ? "border-t mt-4" : null
-  //         } ${i.space ? "mt-12" : null}`}
-  //       >
-  //         <img src={i.icon} />
-  //         <a
-  //           href="#"
-  //           className={`text-sm leading-10 font-medium ${
-  //             i.color ? " text-[#32D583]" : "text-[#828282]"
-  //           }`}
-  //         >
-  //           {i.title}
-  //         </a>
-  //       </li>
-  //     );
-  //   });
+
+
 
   return (
     <div className="flex">

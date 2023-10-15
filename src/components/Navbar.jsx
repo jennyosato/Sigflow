@@ -21,7 +21,7 @@ import transform from "../assets/transform.svg";
 ];
 
 const Navbar = () => {
-  const [showNav, setShowNav] = useState(true)
+  const [showNav, setShowNav] = useState(false)
   const nav = menu.map((i) => {
     return (
       <li
