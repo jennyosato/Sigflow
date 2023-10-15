@@ -3,7 +3,7 @@ import dots from "../assets/dots.svg";
 
 const Options = () => {
   return (
-    <div className='group w-40 bg-red-600'>
+    <div className='group'>
         <img src={dots} />
         <div className="absolute right-0 options p-2 hidden group-hover:flex flex-col justify-center gap-2 w-[179px] h-[97px]">
                 <a href="" className="flex gap-3 items-center text-[11px] text-[#34373F]">

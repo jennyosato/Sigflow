@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.svg";
 import { useNavigate } from "react-router-dom";
+import eye from '../assets/eye.svg'
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false)
+  const [viewPwd, setViewPwd] = useState(false)
 
   const navigate = useNavigate();
   useEffect(() => {
     setError("");
   }, [email, password]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true)
     try {
       const res = await fetch(
         "https://sig-staging-api-a4c37da3d933.herokuapp.com/auth/login",
@@ -23,8 +28,10 @@ const Login = () => {
         }
       );
       const data = await res.json();
-      console.log(data);
+      setIsLoading(false)
+      
       if (data.status === true) {
+        localStorage.setItem("token", JSON.stringify(data.data.token))
         navigate("/");
       }
       setError(data.message);
@@ -75,7 +82,7 @@ const Login = () => {
                 className="w-[344px] md:w-[420px] h-[38px] rounded-lg bg-white px-3 border border-[#D0D5DD] focus:outline-none"
               />
             </div>
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start relative">
               <label
                 className="text-[#101828] text-xs leading-5"
                 htmlFor="password"
@@ -83,7 +90,7 @@ const Login = () => {
                 Password
               </label>
               <input
-                type="password"
+                type={viewPwd? "text":"password"}
                 required
                 id="password"
                 onChange={(e) => setPassword(e.target.value)}
@@ -95,9 +102,11 @@ const Login = () => {
               >
                 Forgot Password?
               </a>
+              <img src={eye} className="absolute right-2 cursor-pointer top-7" onClick={() => setViewPwd(!viewPwd)} />
             </div>
 
-            <button className="w-[340px] md:w-[420px] text-white font-semibold text-sm leading-6 h-10 flex justify-center items-center py-3 px-5 rounded-lg bg-[#32D583] border border-[#32D583]">
+            <button disabled={isLoading} className="w-[340px] md:w-[420px] text-white font-semibold text-sm leading-6 h-10 flex justify-center items-center py-3 px-5 rounded-lg bg-[#32D583] border border-[#32D583] gap-2">
+              {isLoading?<span className="w-4 h-4 border-b-2 border-white animate-spin rounded-full"></span>:null}
               Sign in
             </button>
             <p className="text-[#828282] font-semibold">OR</p>

@@ -82,13 +82,19 @@ table{
 tr{
   border-bottom: 1px solid #E0E0E0;
 }
+li:hover{
+ 
+ border-radius: 8px;
+ background-color: #ECFDF3;
+ 
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #32D583;
   }
   button {
     background-color: #f9f9f9;
