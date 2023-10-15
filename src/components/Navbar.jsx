@@ -1,15 +1,17 @@
-import React from 'react'
-import logo from "../assets/logo.svg";
+import React, { useState } from "react"
+
+
 
 const Navbar = () => {
+    const [nav, setNav] = useState(false)
   return (
-    <nav className="w-[284px] min-h-screen shrink-0 px-[30px] py-[45px] flex flex-col justify-around">
-    <a href="/" className="absolute top-[30px] shrink-0">
+    <nav className={nav? "hidden" :" md:sig w-[284px]  min-h-screen shrink-0 absolute md:relative px-[30px] py-[45px] md:flex flex-col justify-around"}>
+    {/* <a href="/" className="absolute top-[30px] shrink-0">
       <img src={logo} alt="logo" />
-    </a>
+    </a> */}
 
     <ul className="">
-    <div className="sig px-[10px] rounded-md shrink-0 h-[35px] w-[188px]">
+    <div className=" px-[10px] rounded-md shrink-0 h-[35px] w-[188px]">
       <h2 className="font-semibold text-sm text-[#101828] leading-10 flex justify-between items-center rounded-md">
         Sigflow
         <svg
@@ -132,7 +134,7 @@ const Navbar = () => {
       <hr/>
       <div className="py-4">
       <li>
-        <a href="" className="flex items-center gap-3 text-sm leading-10 text-[#828282] ">
+        <a href="" className="flex items-center gap-3 text-sm leading-10 text-[#828282] font-[inter] ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -152,7 +154,7 @@ const Navbar = () => {
         </a>
       </li>
       <li>
-        <a href="#" className="flex items-center gap-3 text-sm leading-10 text-[#828282] ">
+        <a href="#" className="flex items-center gap-3 text-sm leading-10 text-[#828282] font-[inter] ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

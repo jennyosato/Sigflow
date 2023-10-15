@@ -5,46 +5,49 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   useEffect(() => {
-   setError('')
-  },[email, password])
-  const handleSubmit = async(e) => {
-    e.preventDefault()
-    try{
-      const res = await fetch("https://sig-staging-api-a4c37da3d933.herokuapp.com/auth/login",{
-        method: "POST", headers: { "Content-Type": "application/json",},
-        body: JSON.stringify({email, password})
-      })
-      const data = await res.json()
-      console.log(data)
-      if(data.status === true){
-        navigate('/')
+    setError("");
+  }, [email, password]);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(
+        "https://sig-staging-api-a4c37da3d933.herokuapp.com/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+      const data = await res.json();
+      console.log(data);
+      if (data.status === true) {
+        navigate("/");
       }
-      setError(data.message)
-      
-    
-    }catch(err){
-     console.log("Error" + err)
+      setError(data.message);
+    } catch (err) {
+      console.log("Error" + err);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col">
       <div>
-      <img src={logo} alt="logo" className="shrink-0 ml-[30px] mt-[30px]" />
+        <img src={logo} alt="logo" className="shrink-0 ml-[30px] mt-[30px]" />
       </div>
-    
-    
-      
+
       <div className="w-full flex flex-col justify-center items-center">
-        <div className="md:w-[480px] w-full  h-[527px] bg-white border border-[#e6e7ec] rounded-lg flex flex-col justify-center items-center gap-4 md:p-[30px]">
+        <div className="md:w-[480px] w-full  h-[527px] bg-white md:border border-[#e6e7ec] rounded-lg flex flex-col justify-center items-center gap-4 md:p-[30px]">
           <div>
-            {error ? <div className="shadow text-red-600">
-              <h2 className=" text-sm">Login Unsuccessfull</h2>
-              <p>{error}</p></div>: null}
+            {error ? (
+              <div className="shadow text-red-600">
+                <h2 className=" text-sm">Login Unsuccessfull</h2>
+                <p>{error}</p>
+              </div>
+            ) : null}
             <h1 className="text-[#101828] text-2xl font-medium">
               Welcome back
             </h1>
@@ -53,8 +56,11 @@ const Login = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="w-[350px] md:w-[420px] h-[403px] flex flex-col items-center gap-5">
-            <div className="flex flex-col items-start w-full">
+          <form
+            onSubmit={handleSubmit}
+            className="w-full md:w-[420px] h-[403px] flex flex-col justify-center items-center gap-5 px-2"
+          >
+            <div className="flex flex-col items-start">
               <label
                 className="text-[#101828] text-xs leading-5"
                 htmlFor="email"
@@ -63,12 +69,13 @@ const Login = () => {
               </label>
               <input
                 type="text"
+                required
                 id="email"
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-[320px] md:w-[420px] h-[38px] rounded-lg bg-white px-3 border border-[#D0D5DD] focus:outline-none"
+                className="w-[344px] md:w-[420px] h-[38px] rounded-lg bg-white px-3 border border-[#D0D5DD] focus:outline-none"
               />
             </div>
-            <div className="flex flex-col items-start w-full">
+            <div className="flex flex-col items-start">
               <label
                 className="text-[#101828] text-xs leading-5"
                 htmlFor="password"
@@ -77,10 +84,10 @@ const Login = () => {
               </label>
               <input
                 type="password"
-                // placeholder="Enter Password"
+                required
                 id="password"
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-[420px] h-[38px] rounded-lg bg-white px-3 border border-[#D0D5DD] focus:outline-none"
+                className="w-[340px] md:w-[420px] h-[38px] rounded-lg bg-white px-3 border border-[#D0D5DD] focus:outline-none"
               />
               <a
                 className="text-xs text-[#32D583] leading-5 font-medium"
@@ -90,11 +97,11 @@ const Login = () => {
               </a>
             </div>
 
-            <button className="w-[420px] text-white font-semibold text-sm leading-6 h-10 flex justify-center items-center py-3 px-5 rounded-lg bg-[#32D583] border border-[#32D583]">
+            <button className="w-[340px] md:w-[420px] text-white font-semibold text-sm leading-6 h-10 flex justify-center items-center py-3 px-5 rounded-lg bg-[#32D583] border border-[#32D583]">
               Sign in
             </button>
             <p className="text-[#828282] font-semibold">OR</p>
-            <div className="flex justify-center items-start content-start flex-wrap gap-5">
+            <div className="flex justify-center items-start content-start flex-wrap gap-3 md:gap-5">
               <button className="rounded-lg flex items-center gap-2 text-[#101828] text-[13px] bg-white border py-[6px] px-[15px] border-[#D0D5DD] h-10">
                 Sign in with GitHub{" "}
                 <svg
@@ -137,7 +144,7 @@ const Login = () => {
                   />
                 </svg>
               </button>
-              <button className="rounded-lg flex items-center gap-2 text-[#101828] text-[13px] bg-white border py-[6px] px-[15px] border-[#D0D5DD] h-10">
+              <button className="rounded-lg flex items-center gap-2 text-[#101828] text-[13px] bg-white border py-[6px] px-[18px] border-[#D0D5DD] h-10">
                 Sign in with SSO{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +166,10 @@ const Login = () => {
           </form>
         </div>
         <p className="text-[#101828] text-xs leading-5">
-          Don't have an account?<a href="#" className="text-[#12B76A] font-medium">Sign Up</a>
+          Don't have an account?
+          <a href="#" className="text-[#12B76A] font-medium">
+            Sign Up
+          </a>
         </p>
       </div>
     </div>

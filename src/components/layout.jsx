@@ -3,12 +3,17 @@ import logo from '../assets/logo.svg'
 
 const Layout = ({children}) => {
   return (
-    <div className='border'>
-        <div>
+    <>
+        <a href='/' className="absolute top-[30px] shrink-0">
             <img src={logo} alt='Logo' />
+        </a>
+        <div className='flex flex-col gap-1'>
+          <div className='border'/>
+          <div/>
+          <div/>
         </div>
         {children}
-        </div>
+        </>
   )
 }
 

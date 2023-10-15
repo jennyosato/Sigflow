@@ -2,12 +2,24 @@ import React, { useState } from "react";
 import Layout from "./layout";
 import Navbar from "./Navbar";
 import dots from "../assets/dots.svg";
+import logo from "../assets/logo.svg";
+import options from "./options";
+
 
 const Home = () => {
   const [options, setOptions] = useState(false);
   return (
     <div className="flex">
+         <a href='/' className="absolute top-[30px] left-[30px] shrink-0 z-50">
+            <img src={logo} alt='Logo' />
+        </a>
+        <div className='flex flex-col gap-1 h-6 w-6 absolute top-[10px] left-8'>
+          <div className='border border-gray-900'/>
+          <div className='border border-gray-900'/>
+          <div className='border border-gray-900'/>
+        </div>
       <Navbar />
+      
       <div className="bg-white flex flex-col w-full">
         <div className="flex justify-end border-b px-6 py-3">
           <div className="flex items-center">
@@ -20,12 +32,12 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between px-6 py-3">
+        <div className="flex flex-col md:flex-row gap-3 justify-between  px-6 py-3">
           <h2 className="font-semibold text-xl text-[#101828]">
             Transformation
           </h2>
           <div className="flex flex-col gap-2">
-            <div className="flex gap-2">
+            <div className="flex gap-2 justify-between">
               <button className="bg-[#32D583] border border-[#32D583] text-white font-bold text-sm rounded-lg h-8 px-[14px] py-2 flex justify-center items-center gap-2">
                 Create a new Transformation
               </button>
@@ -183,6 +195,7 @@ const Home = () => {
             </button>
           </div>
         </div>
+        <options />
       </div>
     </div>
   );
