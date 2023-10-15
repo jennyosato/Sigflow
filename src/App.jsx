@@ -5,7 +5,7 @@ import Login from "./components/login";
 import Home from "./components/Home";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import AuthLayout from "./components/auth";
-import sign from "./components/sign";
+import Sign from "./components/sign";
 
 import "./App.css";
 
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
-          <Route path="/sign" element={<sign />} />
+          <Route path="/sign" element={<Sign />} />
         </Routes>
       </BrowserRouter>
     </>

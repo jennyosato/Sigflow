@@ -29,7 +29,7 @@ const Navbar = () => {
         className={`flex items-center px-1 gap-3 ${
           i.margint ? "border-t mt-4" : null
         } ${i.space ? "mt-12" : null}`}
-        onClick={() => setShowNav(!showNav)}
+        //onClick={() => setShowNav(!showNav)}
       >
         <img src={i.icon} />
         <a
@@ -44,12 +44,14 @@ const Navbar = () => {
     );
   });
   return (
-    <nav className={!showNav ? "md:w-[284px] w-0 min-h-screen shrink-0 px-[45px] py-[45px] md:flex flex-col justify-around relative duration-300": 'w-[0px] duration-300'}>
-         <div onClick={() => setShowNav(!showNav)} className={`cursor-pointer md:hidden flex flex-col gap-1 h-4 w-4 absolute top-[30px] ${showNav ? 'left-1' : 'right-1'}`}>
+    <div className="relative" >
+       <div onClick={() => setShowNav(!showNav)} className={`cursor-pointer md:hidden flex flex-col gap-1 h-4 w-4 absolute top-2 ${showNav ? 'left-1' : 'right-1'}`}>
         <div className="border border-gray-500" />
         <div className="border border-gray-500" />
         <div className="border border-gray-500" />
       </div>
+    <nav className={!showNav ? "w-[284px] min-h-screen shrink-0 px-[45px] py-[45px] hidden md:flex flex-col justify-around relative duration-300": 'hidden duration-300'}>
+      
       <ul className="">
         <div className="sig px-[10px] rounded-md shrink-0 h-[35px] w-[188px]">
           <h2 className="font-semibold text-sm text-[#101828] leading-10 flex justify-between items-center rounded-md">
@@ -60,6 +62,7 @@ const Navbar = () => {
         {nav}
       </ul>
     </nav>
+    </div>
   );
 };
 
