@@ -22,6 +22,10 @@ import transform from "../assets/transform.svg";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false)
+  const handleChange = () =>{
+    setShowNav(!showNav)
+    console.log(showNav)
+  }
   const nav = menu.map((i) => {
     return (
       <li
@@ -45,12 +49,12 @@ const Navbar = () => {
   });
   return (
     <div className="relative" >
-       <div onClick={() => setShowNav(!showNav)} className={`cursor-pointer md:hidden flex flex-col gap-1 h-4 w-4 absolute top-2 ${showNav ? 'left-1' : 'right-1'}`}>
+       <div onClick={handleChange } className={`cursor-pointer md:hidden flex flex-col gap-1 h-4 w-4 absolute top-6`}>
         <div className="border border-gray-500" />
         <div className="border border-gray-500" />
         <div className="border border-gray-500" />
       </div>
-    <nav className={!showNav ? "w-[284px] min-h-screen shrink-0 px-[45px] py-[45px] hidden md:flex flex-col justify-around relative duration-300": 'hidden duration-300'}>
+    <nav className={!showNav ? "w-[284px] min-h-screen shrink-0 px-[45px] py-[45px] md:flex flex-col justify-around duration-300": 'hidden duration-300'}>
       
       <ul className="">
         <div className="sig px-[10px] rounded-md shrink-0 h-[35px] w-[188px]">
