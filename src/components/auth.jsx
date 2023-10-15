@@ -9,7 +9,7 @@ const AuthLayout = () => {
       <Navigate
         to="/login"
         state={{ message: "You need to log in first", from: location.pathname }}
-        replace
+        
       />
     );
   }
