@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import logo from "../assets/logo.svg";
 import Options from "./options";
+import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
-
+    const navigate = useNavigate()
+    if (localStorage.getItem("token") === null){
+      navigate('/login')
+    }
 
 
   return (

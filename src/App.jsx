@@ -11,14 +11,10 @@ import "./App.css";
 function App() {
   return (
     <>
-     
       <BrowserRouter>
         <Routes>
           <Route path="login" element={<Login />} />
-          <Route element={<AuthLayout />}>
           <Route path="/" element={<Home />} />
-          </Route>
-          
         </Routes>
       </BrowserRouter>
     </>
