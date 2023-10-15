@@ -44,7 +44,7 @@ const Navbar = () => {
     );
   });
   return (
-    <nav className={!showNav ? "w-[284px] min-h-screen shrink-0 px-[45px] py-[45px] md:flex flex-col justify-around relative duration-300": 'w-[0px] duration-300'}>
+    <nav className={!showNav ? "md:w-[284px] w-0 min-h-screen shrink-0 px-[45px] py-[45px] md:flex flex-col justify-around relative duration-300": 'w-[0px] duration-300'}>
          <div onClick={() => setShowNav(!showNav)} className={`cursor-pointer md:hidden flex flex-col gap-1 h-4 w-4 absolute top-[30px] ${showNav ? 'left-1' : 'right-1'}`}>
         <div className="border border-gray-500" />
         <div className="border border-gray-500" />

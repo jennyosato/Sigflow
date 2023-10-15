@@ -48,7 +48,7 @@ const Home = () => {
               <input
                 type="search"
                 placeholder="Search transformation"
-                className="w-full focus:outline-none placeholder:text-xs placeholder:text-[#667085] placeholder:leading-6 placeholder:font-medium"
+                className="w-full text-[#101828] text-sm bg-white focus:outline-none placeholder:text-xs placeholder:text-[#667085] placeholder:leading-6 placeholder:font-medium"
               />
               <button className="bg-white">
                 <svg
