@@ -42,9 +42,9 @@ const Login = () => {
 
   return (
     <div className="flex flex-col bg-white">
-      <div>
+      <a href="/">
         <img src={logo} alt="logo" className="shrink-0 ml-[30px] mt-[30px]" />
-      </div>
+      </a>
 
       <div className="w-full flex flex-col justify-center items-center">
         <div className="md:w-[480px] w-full  h-[527px] bg-white md:border border-[#e6e7ec] rounded-lg flex flex-col justify-center items-center gap-4 md:p-[30px]">
@@ -111,7 +111,7 @@ const Login = () => {
             </button>
             <p className="text-[#828282] font-semibold">OR</p>
             <div className="flex justify-center items-start content-start flex-wrap gap-3 md:gap-5">
-              <button className="rounded-lg flex items-center gap-2 text-[#101828] text-[13px] bg-white border py-[6px] px-[15px] border-[#D0D5DD] h-10">
+              <button type="button" className="rounded-lg flex items-center gap-2 text-[#101828] text-[13px] bg-white border py-[6px] px-[15px] border-[#D0D5DD] h-10">
                 Sign in with GitHub{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ const Login = () => {
                   />
                 </svg>
               </button>
-              <button className="rounded-lg flex items-center gap-2 text-[#101828] text-[13px] bg-white border py-[6px] px-[15px] border-[#D0D5DD] h-10">
+              <button type="button" className="rounded-lg flex items-center gap-2 text-[#101828] text-[13px] bg-white border py-[6px] px-[15px] border-[#D0D5DD] h-10">
                 Sign in with Google{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +153,7 @@ const Login = () => {
                   />
                 </svg>
               </button>
-              <button className="rounded-lg flex items-center gap-2 text-[#101828] text-[13px] bg-white border py-[6px] px-[18px] border-[#D0D5DD] h-10">
+              <button type="button" className="rounded-lg flex items-center gap-2 text-[#101828] text-[13px] bg-white border py-[6px] px-[18px] border-[#D0D5DD] h-10">
                 Sign in with SSO{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

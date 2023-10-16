@@ -24,7 +24,7 @@ const Navbar = () => {
   const [showNav, setShowNav] = useState(false)
   const handleChange = () =>{
     setShowNav(!showNav)
-    console.log(showNav)
+    
   }
   const nav = menu.map((i) => {
     return (
@@ -49,7 +49,7 @@ const Navbar = () => {
   });
   return (
     <div className="relative" >
-       <div onClick={handleChange } className={`cursor-pointer md:hidden flex flex-col gap-1 h-4 w-4 absolute top-6`}>
+       <div onClick={handleChange } className={`cursor-pointer md:hidden flex flex-col gap-1 h-4 w-4 absolute top-6 left-2`}>
         <div className="border border-gray-500" />
         <div className="border border-gray-500" />
         <div className="border border-gray-500" />
