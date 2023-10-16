@@ -30,7 +30,7 @@ const Navbar = () => {
     return (
       <li
       key={i.title}
-        className={`flex items-center px-1 gap-3 ${
+        className={`flex items-center px-1 gap-2 ${
           i.margint ? "border-t mt-4" : null
         } ${i.space ? "mt-12" : null}`}
         //onClick={() => setShowNav(!showNav)}
